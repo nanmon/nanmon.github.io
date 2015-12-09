@@ -2,12 +2,28 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    border-top: 5px solid $grey-color-dark;
+    background: $header-background;
 
+
+    min-height: 112px;
+
+    @include media-query($on-palm) {
+      min-height: 56px;
+    }
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    .wrapper {
+
+      background: white;
+      margin-top: 56px;
+      @include media-query($on-palm) {
+        background: none;
+        margin-top: 0px;
+      }
+    }
 }
 
 .site-title {
@@ -20,8 +36,13 @@
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: $text-color;
+        @include media-query($on-palm) {
+          color: white;
+        }
     }
+
+
 }
 
 .site-nav {
@@ -100,6 +121,16 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+
+    width: 800px;
+    background: white;
+    margin: auto;
+
+    @include media-query($on-palm) {
+      width: auto;
+      background: none;
+      margin: 0px;
+    }
 }
 
 .footer-heading {
@@ -169,6 +200,15 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    width: 800px;
+    background: white;
+    margin: auto;
+
+    @include media-query($on-palm) {
+      width: auto;
+      background: none;
+      margin: 0px;
+    }
 }
 
 .page-heading {
