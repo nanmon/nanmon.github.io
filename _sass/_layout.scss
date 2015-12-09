@@ -1,28 +1,50 @@
 /**
+ * Vertical Divider
+ */
+.vertical-divider {
+  //border-top: 10px solid rgba(0, 0, 0, 0.27);
+  height: 112px;
+  background: $header-background;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  @include media-query($on-palm) {
+    height: 56px;
+  }
+}
+
+/*
+ * Main Card
+ */
+.main-card {
+  margin: 56px 10% 56px 10%;
+  position: absolute;
+  width: 80%;
+  box-shadow: 0px 0px 5px;
+
+  @include media-query($on-palm) {
+    width: auto;
+    margin: 0px;
+  }
+}
+
+
+/**
  * Site header
  */
 .site-header {
     border-bottom: 1px solid $grey-color-light;
-    border-top: 5px solid $grey-color-dark;
-    background: $header-background;
+    background: white;
 
-
-    min-height: 112px;
-
-    @include media-query($on-palm) {
-      min-height: 56px;
-    }
+    min-height: 54px;
     // Positioning context for the mobile navigation icon
     position: relative;
 
-    .wrapper {
-
-      background: white;
-      margin-top: 56px;
-      @include media-query($on-palm) {
-        background: none;
-        margin-top: 0px;
-      }
+    @include media-query($on-palm) {
+      background: none;
+      box-shadow: 0px 0px 5px;
+      border: none;
     }
 }
 
@@ -121,16 +143,7 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
-
-    width: 800px;
-    background: white;
-    margin: auto;
-
-    @include media-query($on-palm) {
-      width: auto;
-      background: none;
-      margin: 0px;
-    }
+    background-color: white;
 }
 
 .footer-heading {
@@ -200,15 +213,7 @@
  */
 .page-content {
     padding: $spacing-unit 0;
-    width: 800px;
-    background: white;
-    margin: auto;
-
-    @include media-query($on-palm) {
-      width: auto;
-      background: none;
-      margin: 0px;
-    }
+    background-color: white;
 }
 
 .page-heading {
