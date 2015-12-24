@@ -47,6 +47,19 @@
   }
 }
 
+.christmas-card {
+  @extend .card;
+  background: $red-500;
+
+  &:nth-child(2){
+    background: $yellow-500;
+  }
+
+  &:last-child {
+    background: $green-500;
+  }
+}
+
 /*
  * Main Card
  */
