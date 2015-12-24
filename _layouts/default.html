@@ -3,8 +3,10 @@
 
   {% include head.html %}
 
-  <body>
-    <div class="vertical-divider" ></div>
+  <body {% if page.init %} onload="init();" {% endif %}>
+    <div class="vertical-divider" >
+      {% include toolbar.html %}
+    </div>
     <div class="main-card">
       {% include header.html %}
       <div class="page-content">

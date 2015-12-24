@@ -22,14 +22,15 @@ $header-background:#6495ED;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+$shadow-color: rgba(0,0,0, 0.3);
 
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          800px;
+$on-palm:          600px;
 $on-laptop:        800px;
 
-
+$red-500: #f44336;
 
 // Use media queries like this:
 // @include media-query($on-palm) {

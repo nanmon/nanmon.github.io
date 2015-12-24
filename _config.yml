@@ -16,7 +16,7 @@ description: > # this means to ignore newlines until "baseurl:"
 url: "https://nanmon.github.io" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username:  nanmon
-
+repository: "https://github.com/nanmon/nanmon.github.io"
 # Build settings
 markdown: kramdown
 
@@ -29,3 +29,4 @@ defaults:
       layout: "post"
       autor: "Nan"
       preview: "Real agasajo"
+      category: "blog"

@@ -8,14 +8,20 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      {% if post.category == "blog" %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{post.preview}}</span>
-      </li>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+          <span class="post-meta">{{ post.preview }}</span>
+          <br>
+          {% for tag in post.tags %}
+            <span class="post-tag">{{ tag }}</span>
+          {% endfor %}
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 

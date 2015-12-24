@@ -8,8 +8,42 @@
   width: 100%;
   z-index: -1;
 
-  @include media-query($on-palm) {
+  /*@include media-query($on-palm) {
     height: 56px;
+  }*/
+}
+
+.christmas-divider {
+  @extend .vertical-divider;
+  background: $red-500;
+
+  p {
+    font-family: $base-font-family;
+    font-size: 200%;
+    position: absolute;
+    left: 50%;
+    top: 64px;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    text-align: center;
+
+    @include media-query($on-palm) {
+      font-size: 120%;
+    }
+  }
+}
+
+.card {
+  margin: 5px auto 5px auto;
+  position: relative;
+  width: 80%;
+  box-shadow: 0px 0px 5px $shadow-color;
+  background: white;
+  border-radius: 2px;
+  padding: 5px;
+
+  @include media-query($on-palm) {
+    width: 95%;
   }
 }
 
@@ -17,23 +51,18 @@
  * Main Card
  */
 .main-card {
-  margin: 59px auto 56px auto;
-  position: relative;
-  width: 80%;
-  box-shadow: 0px 0px 5px;
-  background: white;
-  border-radius: 2px;
-  padding: 5px;
-  top: -128px;
+  @extend .card;
+  margin: 0px auto 0px auto;
+  top: -69px;
+}
 
-  @include media-query($on-palm) {
-    width: auto;
-    margin: 0px;
-    background: none;
-    border-radius: 0px;
-    padding: 0px;
-    top: -56px;
-  }
+/**
+ * Site toolbar
+ */
+.site-toolbar {
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  z-index: 5;
 }
 
 
@@ -45,15 +74,14 @@
     background: white;
 
     min-height: 64px;
-    // Positioning context for the mobile navigation icon
-    position: relative;
 
-    @include media-query($on-palm) {
+
+    /*@include media-query($on-palm) {
       min-height: 56px;
       background: none;
       box-shadow: 0px 0px 5px;
       border: none;
-    }
+    }*/
 }
 
 .site-title {
@@ -67,9 +95,9 @@
     &,
     &:visited {
         color: $text-color;
-        @include media-query($on-palm) {
+        /*@include media-query($on-palm) {
           color: white;
-        }
+        }*/
     }
 
 
@@ -84,9 +112,10 @@
     }
 
     .page-link {
-        color: $text-color;
+        color: white;
         line-height: $base-line-height;
-
+        font-weight: bolder;
+        font-size: 14px;
         // Gaps between nav items, but not on the last one
         &:not(:last-child) {
             margin-right: 20px;
@@ -97,10 +126,18 @@
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
+
         border-radius: 5px;
         text-align: right;
+
+        &:hover{
+            box-shadow: 0px 0px 5px $shadow-color;
+            background-color: $background-color;
+            border: 1px solid $grey-color-light;
+            .menu-icon {
+              display: none;
+            }
+        }
 
         .menu-icon {
             display: block;
@@ -116,7 +153,7 @@
                 height: 15px;
 
                 path {
-                    fill: $grey-color-dark;
+                    fill: white;
                 }
             }
         }
@@ -134,7 +171,8 @@
         .page-link {
             display: block;
             padding: 5px 10px;
-
+            color: $text-color;
+            font-weight: normal;
             &:not(:last-child) {
                 margin-right: 0;
             }
@@ -235,6 +273,12 @@
     > li {
         margin-bottom: $spacing-unit;
         border-bottom: 1px solid $grey-color-light;
+        padding-bottom: 5px;
+
+        h2 {
+          margin: 0px;
+        }
+
     }
 }
 
@@ -248,6 +292,13 @@
     font-size: 24px;
 }
 
+.post-tag {
+  font-size: 12px;
+  background: $grey-color-light;
+  border-radius: 18px;
+  padding: 5px 9px 5px 9px;
+  margin: 5px;
+}
 
 
 /**
@@ -272,7 +323,6 @@
 
     h2 {
         font-size: 32px;
-
         @include media-query($on-laptop) {
             font-size: 28px;
         }

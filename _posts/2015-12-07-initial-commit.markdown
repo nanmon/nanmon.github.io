@@ -1,7 +1,7 @@
 ---
 title: "Initial Commit"
 date: "2015-12-07"
-category: "Ñah"
+tags: blog
 preview: "Why did I put this custom previews if I don't know what to say here?"
 permalink: "initial-commit"
 ---
